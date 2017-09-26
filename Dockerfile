@@ -17,7 +17,9 @@ RUN add-apt-repository \
        stable"
 
 RUN apt update && apt install -y \
-                      docker-ce \
-                      docker-compose
+                      docker-ce
+
+RUN curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
 
 
